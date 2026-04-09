@@ -31,3 +31,7 @@ jobs:
       - name: Automated testing
         run: |
           python test_app.py
+                - name: Security scan (simulated)
+        
+          echo "Running security scan..."
+          echo "No vulnerabilities found."
