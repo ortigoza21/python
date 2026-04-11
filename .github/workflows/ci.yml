@@ -28,8 +28,24 @@ jobs:
           python -m py_compile app.py
           echo "Build completed successfully."
 
-      - name: Automated testing
-        run: |
+       - name: Automated testing
+         run: |
           python test_app.py
+
+      - name: Security scan (simulated)
+        run: |
           echo "Running security scan..."
           echo "No vulnerabilities found."
+
+      - name: Prepare artifact
+        run: |
+          mkdir -p build_artifacts
+          cp app.py build_artifacts/
+          cp test_app.py build_artifacts/
+          echo "Artifact package prepared."
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: application-artifacts
+          path: build_artifacts/
