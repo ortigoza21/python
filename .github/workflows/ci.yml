@@ -28,8 +28,8 @@ jobs:
           python -m py_compile app.py
           echo "Build completed successfully."
 
-       - name: Automated testing
-         run: |
+      - name: Automated testing
+        run: |
           python test_app.py
 
       - name: Security scan (simulated)
