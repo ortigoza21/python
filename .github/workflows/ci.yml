@@ -49,3 +49,8 @@ jobs:
         with:
           name: application-artifacts
           path: build_artifacts/
+
+      - name: Continuous deployment (simulated)
+        run: |
+          echo "Deploying application to staging environment..."
+          echo "Deployment completed successfully."
